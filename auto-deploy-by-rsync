@@ -11,6 +11,6 @@ inotifywait -mrq --timefmt '%d/%m/%y %H:%M' \
     -e modify,delete,create  \
     --exclude "(#|\.git|\.svn)" ${src} | while read file
 do
-    cd ${src} && rsync -aztH --delete --progress --rsh='ssh -p32200' ${src} ${target}
+    cd ${src} && rsync -aztH --delete --progress --rsh='ssh -p22' ${src} ${target}
     echo "."
 done
